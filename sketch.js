@@ -35,5 +35,5 @@ function draw() {
   }
 
   updatePixels();  
-  zoff += speedfactor;  
+  zoff += speedfactor; 
 }

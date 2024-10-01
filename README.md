@@ -1,3 +1,3 @@
-This project aims to represent slow tectonic movement in line with the computing limitations of the Raspberry Pi. 
+I was inspired by the land-mass shaped  blobs that were produced from the Perlin noise, and thought that it would be interesting to convey a huge sense of scale at an extremely slow pace to get my generative art piece to mimic the movements of tectonic plates of an alien planet. In this way, I aimed to work within the processing limitations of the Raspberry Pi, and use the slowness and choppiness to reflect a slowly updating cartography of some far off planet. i envision these to be purple islands in green oceans or vice versa, and consider this to be an abstract experiment in conveying movement through Perlin noise.  
 
 The Javascript in this file is supposed to run on boot, using the a script and a systemd service. 

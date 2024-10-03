@@ -26,9 +26,34 @@ function setup() {
   pixelBuffer = createGraphics(width, height);
   pixelBuffer.pixelDensity(1);
   console.log(noiseGrid)
+  if (width < 1000){
+	  if (height < 800){
+	  let speedfactor = .01
+	  }
+	  }
 }
 
 function draw() {
+  if(width < 350)
+    if(height < 350) {
+      scalef = 75;
+
+      for (x = 0; x < height; x++) {
+        for (y = 0; y < width; y++) {
+          n = noise(x / scalef, y / scalef, zoff / scalef);
+          if (n <= 0.5) {
+            set(x, y, color(colora, colorb, colorc));
+          } else {
+            set(x, y, color(colord, colore, colorf));
+          }
+          zoff = zoff + 1;
+        }
+      }
+      updatePixels();
+      zoff = zoff + 1;
+    }
+      
+      else {
   pixelBuffer.loadPixels();
   
   let xoff = 0;
@@ -41,7 +66,7 @@ function draw() {
     }
     xoff += 0.1;
   }
-  
+
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
       let gx = (x / width) * (gridSize - 1);
@@ -80,6 +105,7 @@ function draw() {
   image(pixelBuffer, 0, 0);
   
   zoff += speedfactor;
+}
 }
 
 function bilinearInterpolation(v00, v10, v01, v11, fx, fy) {
